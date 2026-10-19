@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>RT-Dub UX/UI Test</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0b0f19;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 100px;
+    }
+    .video-card {
+      background: #1e293b;
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      width: fit-content;
+    }
+    h2 {
+      margin: 0 0 12px 4px;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+    video {
+      display: block;
+      max-width: 90vw;
+      height: 65vh;
+      border-radius: 12px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="font-size: 20px; margin-bottom: 24px; color: #f8fafc;">Kiểm thử Giao diện & Tự động dừng tác vụ khi đổi video</h1>
+
+  <div class="video-card">
+    <h2>Video 1 (Feed item 1)</h2>
+    <video id="v1" src="/samples/5.mp4" controls playsinline></video>
+  </div>
+
+  <div class="video-card">
+    <h2>Video 2 (Feed item 2 - cuộn xuống hoặc bấm play để test auto-stop video 1)</h2>
+    <video id="v2" src="/samples/5.mp4" controls playsinline></video>
+  </div>
+
+  <script src="/extension/content.js"></script>
+</body>
+</html>

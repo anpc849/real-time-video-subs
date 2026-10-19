@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Realtime Vietnamese Dub",
+  "version": "0.1.0",
+  "description": "Thuyết minh tiếng Việt realtime cho video (xử lý bởi server local).",
+  "host_permissions": ["http://127.0.0.1:8765/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.douyin.com/*",
+        "https://*.tiktok.com/*",
+        "https://*.bilibili.com/*",
+        "https://*.youtube.com/*",
+        "https://*.coursera.org/*"
+      ],
+      "js": ["page_hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.douyin.com/*",
+        "https://*.tiktok.com/*",
+        "https://*.bilibili.com/*",
+        "https://*.youtube.com/*",
+        "https://*.coursera.org/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
